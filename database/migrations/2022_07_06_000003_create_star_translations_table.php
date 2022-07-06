@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('star_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('locale');
+            $table->integer('star_id');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
         });
     }
 
