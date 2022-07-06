@@ -11,7 +11,16 @@ trait Translateable
         return $this->hasMany(static::class . 'Translation');
     }
 
-    public function translation($column, $locale = null)
+    public function translation($locale = null)
+    {
+        if ($locale == null) {
+            $locale = App::getLocale();
+        }
+        
+        return $this->translations()->where('locale', '=', $locale)->first();
+    }
+
+    public function translate($column, $locale = null)
     {
         if ($locale == null) {
             $locale = App::getLocale();

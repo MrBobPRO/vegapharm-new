@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/ru');
+
+Route::group(['prefix' => '{locale}'], function () {
+    Route::get('/', [MainController::class, 'home'])->name('home');
 });
 
 Route::get('/dashboard', function () {
