@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class AchievementTranslation extends Model
 {
+    public $timestamps = false; 
+    protected $guarded = ['id'];
+    
     use HasFactory;
+
+    public function achievement()
+    {
+        return $this->belongsTo(Achievement::class);
+    }
 }

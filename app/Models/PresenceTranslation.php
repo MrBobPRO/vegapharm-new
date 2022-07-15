@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class PresenceTranslation extends Model
 {
+    public $timestamps = false; 
+    protected $guarded = ['id'];
+    
     use HasFactory;
+
+    public function presence()
+    {
+        return $this->belongsTo(Presence::class);
+    }
 }

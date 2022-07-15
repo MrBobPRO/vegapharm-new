@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductTranslation extends Model
 {
+    public $timestamps = false; 
+    protected $guarded = ['id'];
+    
     use HasFactory;
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
