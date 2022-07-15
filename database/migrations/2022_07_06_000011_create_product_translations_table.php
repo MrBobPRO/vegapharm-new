@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('product_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('locale');
+            $table->integer('product_id');
+            $table->string('title')->nullable();
+            $table->string('image')->nullable();
+            $table->string('instruction')->nullable();
+            $table->text('description')->nullable();
+            $table->text('composition')->nullable();
+            $table->text('indication')->nullable();
+            $table->text('use')->nullable();
         });
     }
 

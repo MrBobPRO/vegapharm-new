@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('category_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('locale');
+            $table->integer('category_id');
+            $table->string('title')->nullable();
         });
     }
 

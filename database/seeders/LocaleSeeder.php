@@ -17,11 +17,13 @@ class LocaleSeeder extends Seeder
     {
         $locTitles = ['Русский', 'English'];
         $locValues = ['ru', 'en'];
+        $locMain = [true, false];
         
         for($i=0; $i<count($locTitles); $i++) {
             $locale = new Locale();
             $locale->title = $locTitles[$i];
             $locale->value = $locValues[$i];
+            $locale->main = $locMain[$i];
             $locale->save();
         }
     }

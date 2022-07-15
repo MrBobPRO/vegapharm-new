@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('option_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('locale');
+            $table->integer('option_id');
+            $table->text('value')->nullable();
         });
     }
 

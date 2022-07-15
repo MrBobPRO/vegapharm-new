@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('presence_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('locale');
+            $table->integer('presence_id');
+            $table->string('tite')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
         });
     }
 

@@ -15,11 +15,7 @@ return new class extends Migration
     {
         Schema::create('presences', function (Blueprint $table) {
             $table->id();
-            $table->string('tite');
             $table->string('type');
-            $table->string('address');
-            $table->string('phone');
-            $table->string('email');
         });
     }
 
