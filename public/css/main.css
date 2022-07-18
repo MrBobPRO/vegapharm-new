@@ -1,0 +1,133 @@
+body {
+    display: flex;  /* USED TO PUSH FOOTER TO THE BOTTOM */
+    flex-direction: column;  /* USED TO PUSH FOOTER TO THE BOTTOM */
+    min-height: 100vh;  /* USED TO PUSH FOOTER TO THE BOTTOM */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+:root {
+    --main-color: #0190CC;
+    --secondary-color: #F02137;
+    --text-color: #1D1D1D;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+p {
+    font-size: 14px;
+    margin: 0 0 1em;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+}
+img {
+    max-width: 100%;
+}
+.unselectable {
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+}
+.visually-hidden {
+    visibility: hidden;
+    display: none;
+}
+.main-container {
+    max-width: 1220px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.theme-styled-block {
+    box-shadow: 0 3px 6px #000000;
+    border-radius: 24px;
+    background-color: white;
+}
+.main-title {
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+
+/* ------------ Logo ------------ */
+.logo {
+    display: flex;
+}
+.logo__image {
+    height: 90px;
+}
+/* ------------ /end Logo ------------ */
+
+
+/* ------------ Buttons ------------ */
+button {
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+.button {
+    display: flex;
+    padding: 8px 24px;
+    gap: 8px;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+.button--main {
+    background-color: var(--secondary-color);
+    color: black;
+    border: none;
+    font-weight: bold;
+    box-shadow: var(--theme-box-shadow);
+}
+.button--secondary {
+    border: 1px dashed var(--main-color);
+    color: var(--main-color);
+    padding: 10px 32px;
+}
+.button--secondary:hover {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    color: white;
+}
+.button--transparent {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0;
+    border: none;
+}
+/* ------------ /end Buttons ------------ */
+
+
+/* ------------ Header ------------ */
+
+/* ------------ /end Header ------------ */
+
+
+/* ------------ Main Tag ------------ */
+.main {
+    flex-grow: 1; /* USED TO PUSH FOOTER TO THE BOTTOM */
+    padding: 32px 40px 60px;
+    max-width: 1220px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    gap: 32px;
+}
+/* ------------ /end Main Tag ------------ */
+
+
+
+/* ------------ Footer ------------ */
+
+/* ------------ /end Footer ------------ */
