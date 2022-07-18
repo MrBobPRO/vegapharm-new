@@ -15,6 +15,6 @@ class Category extends Model
 
     protected static function booted()
     {
-        include('App/Support/CreateTranslationsFunction.php');
+        include(base_path() . '\App\Support\CreateTranslationsFunction.php');
     }
 }
