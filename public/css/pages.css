@@ -1,0 +1,7 @@
+/* ------------ Home page ------------ */
+.stars-section__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+/* ------------ /end Home page ------------ */
