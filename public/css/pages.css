@@ -132,4 +132,75 @@
     font-size: 18px;
 }
 
+/* Activity section */
+.activity-section__inner {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    color: white;
+}
+.activity-section__title {
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Home Global */
+.home__global {
+    background-color: var(--background-color);
+}
+.home__global__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+.home-products__title {
+    margin-bottom: 20px;
+}
+.home-products__categories-more-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+/* Our Presence */
+.our-presence {
+    margin-top: 32px;
+}
+.our-presence__title {
+    margin-bottom: 16px;
+}
+.our-presence__text {
+    max-width: 665px;
+}
+
+/* Presence Globe */
+.presence-globe {
+    margin-top: 32px;
+    position: relative;
+}
+.presence-globe__panel {
+    padding: 48px 50% 48px 32px;
+}
+.presence-globe__cities {
+    margin-bottom: 40px;
+}
+.presence-globe__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.presence-globe__button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-weight: 300;
+}
+.presence-globe__image {
+    position: absolute;
+    top: -190px;
+    left: 45%;
+}
 /* ------------ /end Home page ------------ */

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('locale');
             $table->integer('presence_id');
-            $table->string('tite')->nullable();
+            $table->string('title')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();

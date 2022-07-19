@@ -13,8 +13,8 @@
             <div class="greeting__text">
                 <h2 class="greeting__subtitle">Vegapharm — Путеводная звезда</h2>
                 <h1 class="greeting__title">Здоровья</h1>
-                <a class="greeting__link" href="#"> Все препараты
-                    <span class="material-icons-outlined greeting__link-icon">arrow_forward</span>
+                <a class="greeting__link button button--main button_with_red_icon" href="#"> Все препараты
+                    <span class="material-icons-outlined">arrow_forward</span>
                 </a>
             </div>
 
@@ -49,10 +49,10 @@
             </div>
         </div>
     </div>
-</section>  {{-- Greeting end --}}
+</section>  {{-- Stars end --}}
 
 
-{{-- Stars start --}}
+{{-- About us start --}}
 <section class="about-us" style="background-image: url({{ asset('img/home/about-bg.png') }})">
     <div class="about-us__inner main-container">
         <h1 class="about-us__title main-title">О нас</h1>
@@ -63,10 +63,10 @@
             <p>Она образована специалистами с большим стажем работы в области разработки, маркетинга и продвижения фармацевтической продукции. Благодаря деятельности нашей фармацевтической компании, врачи имеют возможность широкого выбора лекарственных препаратов и тщательного их подбора для конкретных пациентов. Они получают от наших сотрудников исчерпывающую информацию о новых разработках в области современной медицины.</p>
         </div>
     </div>
-</section>  {{-- Greeting end --}}
+</section>  {{-- About us end --}}
 
 
-{{-- Stars start --}}
+{{-- Corporate culture start --}}
 <section class="corporate-culture">
     <div class="corporate-culture__inner main-container">
         <ul class="corporate-culture__list">
@@ -116,7 +116,7 @@
             </li>
         </ul>
     </div>
-</section>  {{-- Greeting end --}}
+</section>  {{-- Corporate culture end --}}
 
 
 {{-- Achievements start --}}
@@ -148,6 +148,87 @@
             </div>
         </div>
     </div>
-</section>  {{-- Greeting end --}}
+</section>  {{-- Achievements end --}}
+
+
+{{-- Activity start --}}
+<section class="activity-section" style="background-image: url({{ asset('img/home/activity-bg.png') }})">
+    <div class="activity-section__inner main-container">
+        <h1 class="activity-section__title main-title">Общественная деятельность</h1>
+        <div class="activity-section__text">
+            <p>Являясь признанным лидером фармацевтической отрасли, Vegapharm успешно подает пример остальным, благодаря своей активной благотворительной деятельности. Время от времени компания организует благотворительные велопробеги для детей с сахарным диабетом и спонсирует детские представления в кукольном театре. Также ежегодно Vegapharm проводит праздник в поддержку детей с синдромом Дауна.</p>
+        </div>
+    </div>
+</section>  {{-- Activity end --}}
+
+
+{{-- Home Global start --}}
+<section class="home__global">
+    <div class="home__global__inner main-container">
+        {{-- Home Products start --}}
+        <div class="home-products">
+            <h1 class="home-products__title main-title">Наша продукция</h1>
+            <div class="home-products__text">
+                <p>Мы производим качественные препараты для разной отрасли медицины</p>
+            </div>
+
+            <ul class="home-products__categories-list">
+                @foreach ($categories as $category)
+                    <li class="home-products__categories-item">
+                        <a class="home-products__categories-link" href="#">
+                            <span class="material-icons-outlined">east</span>
+                            {{ $category->title }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <div class="home-products__categories-more-container">
+                <a class="home-products__categories-more button button--main button_with_red_icon" href="#">
+                    Все препараты
+                    <span class="material-icons-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </div>  {{-- Home Products end --}}
+
+        {{-- Our presence start --}}
+        <div class="our-presence">
+            <h1 class="our-presence__title main-title">Наше присутствие</h1>
+            <div class="our-presence__text">
+                <p>Основными достижениями компании Vegapharm является постоянно растущее число долгосрочных контрактов с клиентами, которые работают на мировом фармацевтическом рынке и партнеров производителей в Европе и Азии. Это подтверждает соответствие наших услуг существующим современным требованиям клиентов и партнеров. Компания постоянно работает над расширением спектра услуг аутсорсинга. В нашем лице Клиент получает не только исполнителя, но и надежного партнера.</p>
+            </div>
+        </div>  {{-- Our presence end --}}
+
+        <div class="presence-globe">
+            <div class="presence-globe__panel theme-styled-block">
+                <div class="presence-globe__cities">
+                    <h3 class="presence-globe__title">Основные региональные офисы</h3>
+                    <ul class="presence-globe__list">
+                        @foreach ($cities as $city)
+                            <li>
+                                <button class="presence-globe__button">{{ $city->translate('title') }}</button>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+    
+                <div class="presence-globe__countries">
+                    <h3 class="presence-globe__title">Страны обслуживания</h3>
+                    <ul class="presence-globe__list">
+                        @foreach ($countries as $country)
+                            <li>
+                                <button class="presence-globe__button">{{ $country->translate('title') }}</button>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <img class="presence-globe__image" src="{{ asset('img/home/globe.png') }}" alt="globe">
+        </div>
+
+
+    </div>  {{-- Home Global Inner end --}}
+</section>  {{-- Home Global end --}}
 
 @endsection

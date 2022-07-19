@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             LocaleSeeder::class,
             StarSeeder::class,
             AchievementSeeder::class,
+            CategorySeeder::class,
+            PresenceSeeder::class,
         ]);
     }
 }
