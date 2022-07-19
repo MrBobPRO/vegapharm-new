@@ -22,3 +22,11 @@
     opacity: 1;
 }
 /* ------------ /end Dropdown ------------ */
+
+
+/* ------------ Owl Carousel ------------ */
+.owl-carousel-container {
+    position: relative;
+    max-width: 100%;
+}
+/* ------------ /end Owl Carousel ------------ */

@@ -26,11 +26,11 @@
     
                 <ul class="dropdown__list">
                     <li class="dropdown__item">
-                        <a class="dropdown__link" href="#">EN</a>
+                        <a class="dropdown__link" href="{{ route('home', ['locale' => 'en']) }}">EN</a>
                     </li>
     
                     <li class="dropdown__item">
-                        <a class="dropdown__link" href="#">RU</a>
+                        <a class="dropdown__link" href="{{ route('home', ['locale' => 'ru']) }}">RU</a>
                     </li>
                 </ul>
             </div>

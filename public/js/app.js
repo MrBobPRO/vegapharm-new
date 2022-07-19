@@ -24,3 +24,27 @@ $.ajaxSetup({
 // document.querySelector('#scroll-top-button').addEventListener('click', () => {
 //     document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
 // })
+
+
+// stars carousels
+let starsCarousel = $('.stars-carousel');
+starsCarousel.owlCarousel({
+    loop: true,
+    margin: 32,
+    nav: true,
+    navText: ['<span class="material-icons-outlined">west</span>', '<span class="material-icons-outlined">east</span>'],
+    items: 4,
+    dots: false,
+});
+
+
+// achievements carousels
+let achievementsCarousel = $('.achievements-carousel');
+achievementsCarousel.owlCarousel({
+    loop: true,
+    margin: 28,
+    nav: true,
+    navText: ['<span class="material-icons-outlined">west</span>', '<span class="material-icons-outlined">east</span>'],
+    items: 4,
+    dots: false,
+});

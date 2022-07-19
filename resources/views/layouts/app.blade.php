@@ -34,7 +34,7 @@
 
     <body>
         {{-- SVG Sprite --}}
-        <x-svgs />
+        <x-svg-sprite />
 
         @include('layouts.header')
         <main class="main" role="main">

@@ -1,0 +1,29 @@
+/* ------------ Corporate Culture ------------ */
+.corporate-culture__card {
+    background: var(--background-color);
+    padding: 32px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 3px 6px #0000003d;
+    border-radius: 24px;
+}
+.corporate-culture__card-icon {
+    background: white;
+    padding: 12px;
+    display: flex;
+    border-radius: 50%;
+}
+.corporate-culture__card-icon svg {
+    width: 40px;
+    height: 40px;
+}
+.corporate-culture__card-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.corporate-culture__card-text {
+    margin: 0;
+    font-weight: 300;
+}
+/* ------------ /end Corporate Culture ------------ */
