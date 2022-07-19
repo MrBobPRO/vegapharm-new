@@ -206,7 +206,9 @@
                     <ul class="presence-globe__list">
                         @foreach ($cities as $city)
                             <li>
-                                <button class="presence-globe__button">{{ $city->translate('title') }}</button>
+                                <button class="presence-globe__button
+                                    @if($loop->first) presence-globe__button--active @endif" data-action="switch-presence-tab" data-target-id="city{{ $city->id }}">{{ $city->translate('title') }}
+                                </button>
                             </li>
                         @endforeach
                     </ul>
@@ -217,15 +219,34 @@
                     <ul class="presence-globe__list">
                         @foreach ($countries as $country)
                             <li>
-                                <button class="presence-globe__button">{{ $country->translate('title') }}</button>
+                                <button class="presence-globe__button" data-action="switch-presence-tab" data-target-id="country{{ $country->id }}">{{ $country->translate('title') }}</button>
                             </li>
                         @endforeach
                     </ul>
                 </div>
+
+                <img class="presence-globe__image" src="{{ asset('img/home/globe.png') }}" alt="globe">
             </div>
 
-            <img class="presence-globe__image" src="{{ asset('img/home/globe.png') }}" alt="globe">
+            <div class="presence-globe__tabs">
+                @foreach ($cities as $city)
+                    <div class="presence-globe__tabs-item @if($loop->first) presence-globe__tabs-item--active @endif" data-id="city{{ $city->id }}">
+                        <p>Адрес регионального офиса:<br>{{ $city->translate('address') }}</p>
+                        <p>Телефон:<br>{{ $city->translate('phone') }}</p>
+                        <p>Почта:<br>{{ $city->translate('email') }}</p>
+                    </div>
+                @endforeach
+
+                @foreach ($countries as $country)
+                    <div class="presence-globe__tabs-item" data-id="country{{ $country->id }}">
+                        <p>Адрес регионального офиса:<br>{{ $country->translate('address') }}</p>
+                        <p>Телефон:<br>{{ $country->translate('phone') }}</p>
+                        <p>Почта:<br>{{ $country->translate('email') }}</p>
+                    </div>
+                @endforeach
+            </div>
         </div>
+
 
 
     </div>  {{-- Home Global Inner end --}}

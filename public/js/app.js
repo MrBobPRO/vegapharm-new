@@ -48,3 +48,22 @@ achievementsCarousel.owlCarousel({
     items: 4,
     dots: false,
 });
+
+
+// Presence tabs
+document.querySelectorAll('[data-action="switch-presence-tab"]').forEach((item) => {
+    item.addEventListener('click', (evt) => {
+        let targetButton = evt.target;
+        let activeButton = document.querySelector('.presence-globe__button--active');
+
+        // escape multiple same button click
+        if (targetButton !== activeButton) {
+            activeButton.classList.remove('presence-globe__button--active');
+            targetButton.classList.add('presence-globe__button--active');
+
+            let tab = document.querySelector('.presence-globe__tabs');
+            tab.querySelector('.presence-globe__tabs-item--active').classList.remove('presence-globe__tabs-item--active');
+            tab.querySelector(`[data-id="${targetButton.dataset.targetId}"]`).classList.add('presence-globe__tabs-item--active');
+        }
+    });
+});
