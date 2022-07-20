@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title'); // used only in dashboard
             $table->string('key');
+            $table->boolean('wysiwyg');
         });
     }
 

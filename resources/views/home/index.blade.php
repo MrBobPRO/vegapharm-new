@@ -11,9 +11,9 @@
 
         <div class="greeting__body">
             <div class="greeting__text">
-                <h2 class="greeting__subtitle">Vegapharm — Путеводная звезда</h2>
-                <h1 class="greeting__title">Здоровья</h1>
-                <a class="greeting__link button button--main button_with_red_icon" href="#"> Все препараты
+                <h2 class="greeting__subtitle">Vegapharm — {{ __('Путеводная звезда') }}</h2>
+                <h1 class="greeting__title">{{ __('здоровья') }}</h1>
+                <a class="greeting__link button button--main button_with_red_icon" href="#"> {{ __('Все препараты') }}
                     <span class="material-icons-outlined">arrow_forward</span>
                 </a>
             </div>
@@ -26,8 +26,8 @@
 {{-- Stars start --}}
 <section class="stars-section">
     <div class="stars-section__inner main-container">
-        <h1 class="stars-section__title main-title">7 звезд Vegapharm</h1>
-        <p>В основе крепкого здоровья и комфортного самочувствия лежит 7 добродетелей, 7 постулатов. Все они являются основой и для деятельности Vegapharm.</p>
+        <h1 class="stars-section__title main-title">{{ __('7 звезд Vegapharm') }}</h1>
+        <p>{{ App\Models\Option::getByKey('vega-7-stars')->translate('value') }}</p>
 
         <div class="stars-carousel-container owl-carousel-container">
             <div class="stars-carousel owl-carousel" id="stars-carousel">

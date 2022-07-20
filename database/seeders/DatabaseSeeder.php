@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             AchievementSeeder::class,
             CategorySeeder::class,
             PresenceSeeder::class,
+            OptionSeeder::class
         ]);
     }
 }

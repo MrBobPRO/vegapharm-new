@@ -13,6 +13,11 @@ class Option extends Model
     use HasFactory;
     use Translateable;
 
+    public static function getByKey($key)
+    {
+        return self::where('key', $key)->first();
+    }
+
     protected static function booted()
     {
         include(base_path() . '\App\Support\CreateTranslationsFunction.php');
