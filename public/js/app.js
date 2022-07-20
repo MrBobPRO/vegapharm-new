@@ -21,9 +21,9 @@ $.ajaxSetup({
 
 
 // scroll top button
-// document.querySelector('#scroll-top-button').addEventListener('click', () => {
-//     document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
-// })
+document.querySelector('.scroll-top').addEventListener('click', () => {
+    document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
+})
 
 
 // stars carousels

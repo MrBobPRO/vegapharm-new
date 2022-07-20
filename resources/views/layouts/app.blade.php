@@ -23,6 +23,7 @@
         <link href="{{ asset('js/plugins/selectize/selectize.css') }}" rel="stylesheet">
 
         {{-- App styles --}}
+        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/form.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lists.css') }}">

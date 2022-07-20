@@ -199,6 +199,7 @@
             </div>
         </div>  {{-- Our presence end --}}
 
+        {{-- Presence Globe start --}}
         <div class="presence-globe">
             <div class="presence-globe__panel theme-styled-block">
                 <div class="presence-globe__cities">
@@ -245,9 +246,41 @@
                     </div>
                 @endforeach
             </div>
+        </div>  {{-- Presence Globe end --}}
+
+        <div class="career-feedback-divider">
+            <div class="career-feedback-divider__inner">
+                <div class="career-block">
+                    <h1 class="career-block__title main-title">Карьера</h1>
+                    <div class="career-block__text theme-styled-block">
+                        <p>Сотрудники – основной актив компании Vegapharm открывает свои двери всем желающим приобрести международный опыт в сфере фармацевтики. Мы придерживаемся высокой кадровой политики компании, которая направлена на развитие сплоченной команды высококвалифицированных, талантливых и амбициозных профессионалов.</p>
+                        <p>Эффективные коммуникации внутри компании, вовлеченность каждого сотрудника в достижение поставленных целей, прозрачная система мотивации, профессионального и карьерного роста определяют успешное динамичное развитие компании Vegapharm.</p>
+                    </div>
+                </div>
+
+                <div class="feedback-block">
+                    <h1 class="feedback-block__title main-title">Обратная связь</h1> 
+                    <form class="feedback-form theme-styled-block" action="#" method="POST">
+                        <div class="form-group">
+                            <input class="feedback-input" type="text" name="name" placeholder="Имя*" required>
+                            <input class="feedback-input" type="text" name="email" placeholder="Почта*" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="feedback-input" type="text" name="theme" placeholder="Тема обращения">
+                        </div>
+
+                        <div class="form-group form-group--grow">
+                            <textarea class="feedback-textarea" name="body" rows="5" placeholder="Ваш текст"></textarea>
+                        </div>
+
+                        <button class="feedback-submit button button--main button_with_light_icon">
+                            Отправить <span class="material-icons-outlined">arrow_forward</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-
 
     </div>  {{-- Home Global Inner end --}}
 </section>  {{-- Home Global end --}}

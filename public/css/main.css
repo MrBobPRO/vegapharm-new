@@ -3,11 +3,10 @@ body {
     display: flex;  /* USED TO PUSH FOOTER TO THE BOTTOM */
     flex-direction: column;  /* USED TO PUSH FOOTER TO THE BOTTOM */
     min-height: 100vh;  /* USED TO PUSH FOOTER TO THE BOTTOM */
-    margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    color: var(--text-color);
     line-height: 1.4;
+    color: var(--text-color);
 }
 :root {
     --main-color: #0190CC;
@@ -39,8 +38,13 @@ img {
     user-select: none;
 }
 .visually-hidden {
-    visibility: hidden;
-    display: none;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 .main-container {
     max-width: 1240px;
@@ -107,6 +111,7 @@ button {
     font-size: 17.5px;
     font-weight: bold;
     background: transparent;
+    border: none;
 }
 .button_with_red_icon span {
     background: var(--secondary-color);
@@ -142,7 +147,7 @@ button {
 .header__actions {
     display: flex;
     gap: 32px;
-    align-items: flex-start;
+    align-items: center;
 }
 .header__contacts {
     display: flex;
@@ -241,18 +246,28 @@ button {
 /* ------------ Navbar ------------ */
 .navbar__list {
     margin: 0;
-    padding: 0 0 0 32px;
+    padding: 0;
     list-style: none;
     display: flex;
     gap: 8px;
     font-size: 16px;
 }
-.navbar__link {
+.greeting .navbar__list {
+    padding-left: 32px;
+}
+.greeting .navbar__link {
     padding: 4px 10px;
     border-radius: 16px;
 }
-.navbar__link--highlight {
+.greeting .navbar__link--highlight {
     background: var(--secondary-color);
+    color: white;
+}
+.footer .navbar__list {
+    gap: 32px;
+    font-size: 15px;
+}
+.footer .navbar__link {
     color: white;
 }
 /* ------------ /end Navbar ------------ */
@@ -270,5 +285,37 @@ button {
 
 
 /* ------------ Footer ------------ */
-
+.footer {
+    background-color: var(--main-color);
+    color: white;
+}
+.footer__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    gap: 180px;
+    position: relative;
+}
+.footer__main {
+    flex-grow: 1;
+}
+.footer__contacts {
+    font-weight: 300;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.footer__contacts-item {
+    margin: 0;
+}
+.scroll-top {
+    position: absolute;
+    right: -40px;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    box-shadow: 0 3px 6px #0000003d;
+}
 /* ------------ /end Footer ------------ */

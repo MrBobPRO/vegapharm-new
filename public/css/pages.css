@@ -65,7 +65,7 @@
 /* Corporate Culture */
 .corporate-culture__inner {
     padding-top: 60px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
 /* Achevements section */
@@ -150,7 +150,7 @@
 }
 .home__global__inner {
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     flex-direction: column;
 }
 .home-products__title {
@@ -222,5 +222,35 @@
 }
 .presence-globe__tabs-item--active {
     display: flex;
+}
+
+/* Career & Feedback */
+.career-feedback-divider {
+    margin-top: 32px;
+}
+.career-feedback-divider__inner {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 60px
+}
+.career-block {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+.career-block__text {
+    flex-grow: 1;
+    padding: 40px 32px 30px;
+    font-weight: 300;
+}
+.feedback-block {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+.feedback-submit {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
 }
 /* ------------ /end Home page ------------ */
