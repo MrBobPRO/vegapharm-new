@@ -35,7 +35,7 @@
     
             <ul class="header__socials">
                 <li>
-                    <a class="header__socials-link" href="#">
+                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('instagram-link')->translate('value') }}">
                         <svg>
                             <use href="#facebook-svg"></use>
                         </svg>
@@ -43,7 +43,7 @@
                 </li>
     
                 <li>
-                    <a class="header__socials-link" href="#">
+                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('facebook-link')->translate('value') }}">
                         <svg>
                             <use href="#instagram-svg"></use>
                         </svg>

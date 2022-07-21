@@ -223,5 +223,35 @@ class OptionSeeder extends Seeder
         $opt->translations()->where('locale', 'en')->first()->update([
             'value' => '“Vegapharm” улица Н.Карабаева 78/1'
         ]);
+
+
+        $opt = new Option();
+        $opt->title = 'Инстаграм ссылка';
+        $opt->key = 'instagram-link';
+        $opt->wysiwyg = false;
+        $opt->save();
+
+        $opt->translations()->where('locale', 'ru')->first()->update([
+            'value' => 'https://www.instagram.com/vegapharm_kazakhstan/'
+        ]);
+
+        $opt->translations()->where('locale', 'en')->first()->update([
+            'value' => 'https://www.instagram.com/vegapharm_kazakhstan/'
+        ]);
+
+
+        $opt = new Option();
+        $opt->title = 'Фейсбук ссылка';
+        $opt->key = 'facebook-link';
+        $opt->wysiwyg = false;
+        $opt->save();
+
+        $opt->translations()->where('locale', 'ru')->first()->update([
+            'value' => '#'
+        ]);
+
+        $opt->translations()->where('locale', 'en')->first()->update([
+            'value' => '#'
+        ]);
     }
 }

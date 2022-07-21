@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Locale;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -17,10 +18,17 @@ class SetDefaultLocaleForUrls
      */
     public function handle(Request $request, Closure $next)
     {
-        URL::defaults(['locale' => $request->locale]);
+        if($request->locale) {
+            URL::defaults(['locale' => $request->locale]);
+            
+            app()->setLocale($request->locale);
 
-        app()->setLocale($request->locale);
-        
+        } else {
+            URL::defaults(['locale' => Locale::where('main', true)->first()->value]);
+            
+            app()->setLocale(Locale::where('main', true)->first()->value);
+        }
+
         return $next($request);
     }
 }
