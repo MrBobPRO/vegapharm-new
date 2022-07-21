@@ -53,7 +53,7 @@
 
 
 {{-- About us start --}}
-<section class="about-us" style="background-image: url({{ asset('img/home/about-bg.png') }})">
+<section class="about-us" id="about-us" style="background-image: url({{ asset('img/home/about-bg.png') }})">
     <div class="about-us__inner main-container">
         <h1 class="about-us__title main-title">{{ __('О нас') }}</h1>
         <div class="about-us__text">{!! App\Models\Option::getByKey('about-us')->translate('value') !!}</div>
@@ -177,7 +177,7 @@
         </div>  {{-- Home Products end --}}
 
         {{-- Our presence start --}}
-        <div class="our-presence">
+        <div class="our-presence" id="our-presence">
             <h1 class="our-presence__title main-title">{{ __('Наше присутствие') }}</h1>
             <div class="our-presence__text">{!! App\Models\Option::getByKey('our-presence')->translate('value') !!}</div>
         </div>  {{-- Our presence end --}}
@@ -233,7 +233,7 @@
 
         <div class="career-feedback-divider">
             <div class="career-feedback-divider__inner">
-                <div class="career-block">
+                <div class="career-block" id="career">
                     <h1 class="career-block__title main-title">{{ __('Карьера') }}</h1>
                     <div class="career-block__text theme-styled-block">{!! App\Models\Option::getByKey('career')->translate('value') !!}</div>
                 </div>

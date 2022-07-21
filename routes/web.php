@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'home'])->name('main');
+// Routes for the default locale must be located at the top
+Route::get('/', [MainController::class, 'home'])->name('default.home');
+Route::get('/products', [ProductController::class, 'index'])->name('default.products.index');
 
 Route::prefix('{locale}')->group(function () {
     Route::get('/', [MainController::class, 'home'])->name('home');
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

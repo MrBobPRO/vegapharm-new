@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__inner main-container">
-        <a class="logo header__logo" href="{{ route('home') }}">
+        <a class="logo header__logo" href="{{ App\Support\Helper::generateRoute('home') }}">
             <img class="logo__image" src="{{ asset('img/main/logo.png') }}" alt="Vegapharm logo">
         </a>
     
@@ -27,7 +27,11 @@
                 <ul class="dropdown__list">
                     @foreach ($locales as $locale)
                         <li class="dropdown__item">
-                            <a class="dropdown__link" href="{{ route('home', ['locale' => $locale->value]) }}">{{ $locale->value }}</a>
+                            @if($locale->value == App\Models\Locale::where('main', true)->first()->value)
+                                <a class="dropdown__link" href="{{ route('default.home') }}">{{ $locale->value }}</a>
+                            @else
+                                <a class="dropdown__link" href="{{ route('home', ['locale' => $locale->value]) }}">{{ $locale->value }}</a>
+                            @endif
                         </li>
                     @endforeach
                 </ul>
