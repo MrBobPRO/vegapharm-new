@@ -15,15 +15,15 @@ class LocaleSeeder extends Seeder
      */
     public function run()
     {
-        $locTitles = ['Русский', 'English'];
-        $locValues = ['ru', 'en'];
-        $locMain = [true, false];
+        $title = ['Русский', 'English'];
+        $value = ['ru', 'en'];
+        $default = [true, false];
         
-        for($i=0; $i<count($locTitles); $i++) {
+        for($i=0; $i<count($title); $i++) {
             $locale = new Locale();
-            $locale->title = $locTitles[$i];
-            $locale->value = $locValues[$i];
-            $locale->main = $locMain[$i];
+            $locale->title = $title[$i];
+            $locale->value = $value[$i];
+            $locale->default = $default[$i];
             $locale->save();
         }
     }

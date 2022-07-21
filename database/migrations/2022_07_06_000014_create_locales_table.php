@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('value');
-            $table->boolean('main');
+            $table->boolean('default');
             $table->timestamps();
         });
     }

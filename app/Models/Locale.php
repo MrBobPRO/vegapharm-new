@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Locale extends Model
 {
     use HasFactory;
+
+    public static function getDefaultValue()
+    {
+        return self::where('default', true)->first()->value;
+    }
 }

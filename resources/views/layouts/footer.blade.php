@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer__inner main-container">
-        <a class="logo footer__logo" href="{{ App\Support\Helper::generateRoute('home') }}">
+        <a class="logo footer__logo" href="{{ route('home') }}">
             <img class="logo__image" src="{{ asset('img/main/logo-white.png') }}" alt="Vegapharm logo">
         </a>
 
