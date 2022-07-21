@@ -159,6 +159,7 @@ button {
 .locale-dropdown {
     margin-right: 80px;
     margin-left: 20px;
+    text-transform: uppercase;
 }
 .locale-dropdown .dropdown__btn {
     display: flex;
@@ -171,11 +172,13 @@ button {
     border-radius: 50%;
     background: white;
     box-shadow: 0 3px 6px #0000003d;
+    text-transform: uppercase;
 }
 .locale-dropdown .dropdown__list {
     min-width: 80px;
     border-radius: 8px;
     gap: 4px;
+    text-transform: uppercase;
 }
 .header__socials {
     display: flex;
@@ -307,6 +310,7 @@ button {
 }
 .footer__contacts-item {
     margin: 0;
+    color: white;
 }
 .scroll-top {
     position: absolute;

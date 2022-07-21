@@ -7,31 +7,29 @@
         <div class="header__actions">
             <ul class="header__contacts">
                 <li>
-                    <a class="header__contacts-link" href="#">
-                        Телефон: <br>
-                        (+992) 93-444-26-44
+                    <a class="header__contacts-link">
+                        {{ __('Телефон') }}: <br>
+                        {{ App\Models\Option::getByKey('phone')->translate('value') }}
                     </a>
                 </li>
         
                 <li>
                     <a class="header__contacts-link" href="#">
-                        Почта: <br>
-                        info@vegapharm.tj
+                        {{ __('Почта') }}: <br>
+                        {{ App\Models\Option::getByKey('email')->translate('value') }}
                     </a>
                 </li>
             </ul>
     
             <div class="dropdown locale-dropdown">
-                <button class="dropdown__btn">RU</button>
+                <button class="dropdown__btn">{{ app()->getLocale() }}</button>
     
                 <ul class="dropdown__list">
-                    <li class="dropdown__item">
-                        <a class="dropdown__link" href="{{ route('home', ['locale' => 'en']) }}">EN</a>
-                    </li>
-    
-                    <li class="dropdown__item">
-                        <a class="dropdown__link" href="{{ route('home', ['locale' => 'ru']) }}">RU</a>
-                    </li>
+                    @foreach ($locales as $locale)
+                        <li class="dropdown__item">
+                            <a class="dropdown__link" href="{{ route('home', ['locale' => $locale->value]) }}">{{ $locale->value }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
     

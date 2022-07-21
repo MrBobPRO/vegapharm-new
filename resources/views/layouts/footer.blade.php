@@ -9,24 +9,24 @@
 
             <div class="footer__contacts">
                 <p class="footer__contacts-item">
-                    © 2009-2021 Vegapharm.<br>
-                    Все права защищены.
+                    © 2009-{{ date('Y') }} Vegapharm.<br>
+                    {{ __('Все права защищены') }}.
                 </p>
 
                 <p class="footer__contacts-item">
-                    Адрес регионального офиса:<br>
-                    “Vegapharm” улица Н.Карабаева 78/1
+                    {{ __('Адрес регионального офиса') }}:<br>
+                    {{ App\Models\Option::getByKey('regional-office-address')->translate('value') }}
                 </p>
 
                 <p class="footer__contacts-item">
-                    Телефон:<br>
-                    (+992) 93-444-26-44
+                    {{ __('Телефон') }}:<br>
+                    {{ App\Models\Option::getByKey('phone')->translate('value') }}
                 </p>
 
-                <p class="footer__contacts-item">
-                    Почта:<br>
-                    info@vegapharm.tj
-                </p>
+                <a class="footer__contacts-item" href="#">
+                    {{ __('Почта') }}:<br>
+                    {{ App\Models\Option::getByKey('email')->translate('value') }}
+                </a>
             </div>
         </div>
 
