@@ -2,10 +2,10 @@
 @section('main')
 
 {{-- Greeting start --}}
-<section class="greeting">
+<section class="greeting products-greeting">
     <div class="greeting__inner main-container">
         <div class="greeting__image-container">
-            <img class="greeting__image" src="{{ asset('img/main/greeting.png') }}" alt="greeting">
+            <img class="greeting__image" src="{{ asset('img/products/lindavit.png') }}" alt="greeting">
             <img class="greeting__absolute-pill" src="{{ asset('img/main/pill-2.png') }}" alt="pill">
         </div>
 

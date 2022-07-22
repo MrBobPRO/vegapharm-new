@@ -207,15 +207,16 @@ button {
     background-color: var(--background-color);
 }
 .greeting__inner {
-    background: url(/img/main/pill-1.png) 0 180px no-repeat, url(/img/main/pill-3.png) 660px 160px no-repeat, url(/img/main/pill-4.png) 1060px 400px no-repeat, url(/img/main/shape.png) 20px 130px no-repeat;
+    background: url(/img/main/pill-1.png) 0 180px no-repeat, url(/img/main/pill-3.png) 660px 140px no-repeat, url(/img/main/pill-4.png) 1060px 390px no-repeat, url(/img/main/shape.png) 20px 150px no-repeat;
     align-items: center;
 }
 .greeting__image-container {
     position: relative;
     display: flex;
-    padding-top: 20px;
-    width: 680px;
-    min-width: 680px;
+    padding-left: 40px;
+    width: 710px;
+    height: 760px;
+    align-items: flex-end;
 }
 .greeting__image {
     width: 100%;
@@ -223,13 +224,12 @@ button {
 .greeting__absolute-pill {
     position: absolute;
     top: 58%;
-    right: -30px;
+    right: -40px;
 }
 .greeting__body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-left: 60px;
     gap: 100px;
     padding-top: 20px;
 }
@@ -242,6 +242,16 @@ button {
     font-size: 42px;
     color: var(--main-color);
     text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+/* Products greeting */
+.products-greeting .greeting__image-container {
+    justify-content: center;
+    padding-left: 0;
+}
+.products-greeting .greeting__image {
+    width: 78%;
 }
 /* ------------ /end Greeting ------------ */
 
