@@ -50,6 +50,18 @@ achievementsCarousel.owlCarousel({
 });
 
 
+// products carousels
+let productsCarousel = $('.products-carousel');
+productsCarousel.owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    navText: ['<span class="material-icons-outlined">west</span>', '<span class="material-icons-outlined">east</span>'],
+    items: 4,
+    dots: false,
+});
+
+
 // Presence tabs
 document.querySelectorAll('[data-action="switch-presence-tab"]').forEach((item) => {
     item.addEventListener('click', (evt) => {

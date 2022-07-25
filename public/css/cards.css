@@ -37,7 +37,7 @@
     flex-direction: column;
     background-color: white;
     border-radius: 24px;
-    padding: 0 32px 20px;
+    padding: 0 32px 12px;
 }
 .product-card__title {
     text-transform: uppercase;
@@ -70,6 +70,9 @@
 .product-card--rx {
     border: 1px solid var(--main-color);
 }
+.product-card--rx .product-card__prescription {
+    color: var(--main-color);
+}
 .product-card--rx .product-card__icon {
     background-color: var(--main-color);
 }
@@ -77,6 +80,9 @@
 /* OTC card */
 .product-card--otc {
     border: 1px solid var(--secondary-color);
+}
+.product-card--otc .product-card__prescription {
+    color: var(--secondary-color);
 }
 .product-card--otc .product-card__icon {
     background-color: var(--secondary-color);

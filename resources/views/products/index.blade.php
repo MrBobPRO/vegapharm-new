@@ -89,17 +89,6 @@
 
                 <span class="material-icons-outlined search-select__icon">search</span>
             </div>  {{-- Search end --}}
-
-            <div class="popular-products">
-                <ul class="popular-products__list">
-                    <li class="popular-products__item">Популярные препараты:</li>
-                    @foreach ($popularProducts as $product)
-                        <li class="popular-products__item">
-                            <a class="popular-products__link" href="#">{{ $product->translate('title') }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
         </div>  {{-- Filter end --}}
         
         {{-- Products List start --}}
@@ -123,5 +112,15 @@
 
     </div>  {{-- Products section inner end --}}
 </section>  {{-- Products section end --}}
+
+{{-- Popular products start --}}
+<section class="popular-products">
+    <div class="popular-products__inner main-container">
+        <h1 class="popular-products__title main-title">{{ __('Популярные препараты') }}</h1>
+        <x-products-carousel :products="$popularProducts" />
+    </div>
+
+    <div class="popular-products__foot"></div>
+</section>  {{-- Popular products end --}}
 
 @endsection

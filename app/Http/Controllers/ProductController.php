@@ -31,7 +31,12 @@ class ProductController extends Controller
         ->orderBy('title')
         ->paginate(7);
 
-        $popularProducts = Product::where('popular', true)->inRandomOrder()->get();
+        $popularProducts = Product::where('popular', true)
+            ->join('product_translations', function($join) {
+                $join->on('products.id', '=', 'product_translations.product_id');
+                $join->where('product_translations.locale', '=', app()->getLocale());
+            })
+            ->inRandomOrder()->get();
 
         return view('products.index', compact('categories', 'searchProducts', 'products', 'popularProducts'));
     }
