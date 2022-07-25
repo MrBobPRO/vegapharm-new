@@ -13,7 +13,7 @@
             <div class="greeting__text">
                 <h2 class="greeting__subtitle">Vegapharm — {{ __('Путеводная звезда') }}</h2>
                 <h1 class="greeting__title">{{ __('здоровья') }}</h1>
-                <a class="greeting__link button button--main button_with_red_icon" href="#"> {{ __('Все препараты') }}
+                <a class="greeting__link button button--main button_with_red_icon" href="{{ route('products.index') }}"> {{ __('Все препараты') }}
                     <span class="material-icons-outlined">arrow_forward</span>
                 </a>
             </div>

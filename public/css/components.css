@@ -30,3 +30,240 @@
     max-width: 100%;
 }
 /* ------------ /end Owl Carousel ------------ */
+
+
+/* ------------ Prescription filter ------------ */
+.prescription-filter {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    gap: 32px
+}
+.prescription-filter__item {
+    flex-basis: 50%;
+}
+.prescription-filter__input {
+    display: none;
+}
+.prescription-filter__label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--background-color);
+    box-shadow: 0 3px 6px #0000003d;
+    border-radius: 24px;
+    padding: 20px 32px;
+    cursor: pointer;
+}
+.prescription-filter__input:checked + .prescription-filter__label--rx {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.prescription-filter__input:checked + .prescription-filter__label--otc {
+    background-color: var(--main-color);
+    color: white;
+}
+.prescription-filter__label-icon {
+    background: white;
+    padding: 20px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 3px 6px #0000003d;
+    color: var(--text-color);
+}
+.prescription-filter__label-text {
+    font-weight: 300;
+}
+/* ------------ /end Prescription filter ------------ */
+
+
+/* ------------ Selectize ------------ */
+.selectize-input {
+    display: flex !important;
+}
+.selectize-input .item {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ------------ /end Selectize ------------ */
+
+
+/* ------------ Filter ------------ */
+.filter {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Categories Filter */
+.filter__categories {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.categories-select-container {
+    width: 260px;
+    position: relative;
+}
+.filter__categories .selectize-input {
+    background: var(--secondary-color) !important;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 24px;
+    border-color: var(--secondary-color);
+}
+.filter__categories .selectize-input .item {
+    max-width: calc(100% - 28px);
+}
+.categories-select__icon {
+    position: absolute;
+    display: flex;
+    right: 6px;
+    top: 50%;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    transform: translateY(-50%);
+}
+.categories-select__icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Search */
+.filter__search {
+    width: 300px;
+    position: relative;
+}
+.filter__search .selectize-input {
+    background: white !important;
+    color: var(--text-color);
+    padding: 16px 20px;
+    border-radius: 24px;
+    border-color: white;
+}
+.filter__search .selectize-input .item {
+    max-width: calc(100% - 28px);
+}
+.filter__search .selectize-input input {
+    text-overflow: ellipsis;
+    padding-right: 28px !important;
+}
+.search-select__icon {
+    position: absolute;
+    display: flex;
+    right: 4px;
+    top: 50%;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    box-shadow: 0 3px 6px #00000030;
+}
+
+/* Popular Products */
+.popular-products {
+    width: 440px;
+}
+.popular-products__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px 20px;
+    flex-wrap: wrap;
+}
+.popular-products__item {
+    font-weight: 300;
+}
+/* ------------ /end Filter ------------ */
+
+
+/* ------------ Breadcrumbs ------------ */
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+}
+.breadcrumbs__item {
+    display: flex;
+}
+.breadcrumbs__item::after {
+    content: '/';
+    margin-left: 12px;
+}
+.breadcrumbs__item:last-child::after {
+    content: none;
+}
+.breadcrumbs__link {
+
+}
+/* ------------ /end Breadcrumbs ------------ */
+
+
+/* ------------ Pagination  ------------ */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 40px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+.pagination__prev {
+    order: -2;
+}
+.pagination__next {
+    order: -1;
+}
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: black;
+    border: 1px solid transparent;
+}
+.page-link.active {
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 4px;
+    border-color: var(--main-color);
+}
+.page-link.disabled {
+    color: #D0D8DE;
+}
+.pagination__next .page-link {
+    padding: 4px 0;
+}
+.pagination__prev .page-link {
+    padding: 4px 0;
+}
+.pagination__prev-arrow {
+    transform: rotate(180deg);
+}
+/* ------------ /end Pagination  ------------ */

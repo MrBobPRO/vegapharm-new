@@ -58,6 +58,11 @@ img {
     border-radius: 24px;
     background-color: white;
 }
+.title-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
 .main-title {
     font-size: 21px;
     font-weight: bold;

@@ -255,3 +255,37 @@
     bottom: -60px;
 }
 /* ------------ /end Home page ------------ */
+
+
+/* ------------ Products index page ------------ */
+.our-products__inner {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+.our-products__text-container {
+    padding-left: 40px;
+}
+.our-products__title {
+    margin-bottom: 24px;
+}
+
+/* Products section */
+.products-section {
+    background-color: var(--background-color);
+}
+.products-section__inner {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+.products-list-container {
+    padding-top: 40px;
+}
+.products-list__title-container {
+    margin-bottom: 32px;
+}
+.products-list-title {
+    margin: 0;
+}
+/* ------------ /end Products index page ------------ */

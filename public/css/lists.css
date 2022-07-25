@@ -41,3 +41,20 @@
     font-size: 22px;
 }
 /* ------------ /end Home Categories list ------------ */
+
+
+/* ------------ /end Products list ------------ */
+.products-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.products-list__item {
+    width: calc(25% - 22.5px);
+    display: flex;
+}
+
+/* ------------ /end Products list ------------ */
