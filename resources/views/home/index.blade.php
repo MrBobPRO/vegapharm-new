@@ -184,14 +184,14 @@
 
         {{-- Presence Globe start --}}
         <div class="presence-globe">
-            <div class="presence-globe__panel theme-styled-block">
+            <div class="accordion-buttons-container presence-globe__panel theme-styled-block">
                 <div class="presence-globe__cities">
                     <h3 class="presence-globe__title">{{ __('Основные региональные офисы') }}</h3>
                     <ul class="presence-globe__list">
                         @foreach ($cities as $city)
-                            <li>
-                                <button class="presence-globe__button
-                                    @if($loop->first) presence-globe__button--active @endif" data-action="switch-presence-tab" data-target-id="city{{ $city->id }}">{{ $city->translate('title') }}
+                            <li class="presence-globe__item">
+                                <button class="accordion-button presence-accordion-button
+                                    @if($loop->first) accordion-button--active @endif" data-content-id="city{{ $city->id }}">{{ $city->translate('title') }}
                                 </button>
                             </li>
                         @endforeach
@@ -202,8 +202,8 @@
                     <h3 class="presence-globe__title">{{ __('Страны обслуживания') }}</h3>
                     <ul class="presence-globe__list">
                         @foreach ($countries as $country)
-                            <li>
-                                <button class="presence-globe__button" data-action="switch-presence-tab" data-target-id="country{{ $country->id }}">{{ $country->translate('title') }}</button>
+                            <li class="presence-globe__item">
+                                <button class="accordion-button presence-accordion-button" data-content-id="country{{ $country->id }}">{{ $country->translate('title') }}</button>
                             </li>
                         @endforeach
                     </ul>
@@ -212,9 +212,9 @@
                 <img class="presence-globe__image" src="{{ asset('img/home/globe.png') }}" alt="globe">
             </div>
 
-            <div class="presence-globe__tabs">
+            <div class="accordion-content presence-accordion-content">
                 @foreach ($cities as $city)
-                    <div class="presence-globe__tabs-item @if($loop->first) presence-globe__tabs-item--active @endif" data-id="city{{ $city->id }}">
+                    <div class="accordion-content__item presence-accordion-content__item @if($loop->first) accordion-content__item--active @endif" data-id="city{{ $city->id }}">
                         <p>{{ __('Адрес регионального офиса') }}:<br>{{ $city->translate('address') }}</p>
                         <p>{{ __('Телефон') }}:<br>{{ $city->translate('phone') }}</p>
                         <p>{{ __('Почта') }}:<br>{{ $city->translate('email') }}</p>
@@ -222,7 +222,7 @@
                 @endforeach
 
                 @foreach ($countries as $country)
-                    <div class="presence-globe__tabs-item" data-id="country{{ $country->id }}">
+                    <div class="accordion-content__item presence-accordion-content__item" data-id="country{{ $country->id }}">
                         <p>{{ __('Адрес регионального офиса') }}:<br>{{ $country->translate('address') }}</p>
                         <p>{{ __('Телефон') }}:<br>{{ $country->translate('phone') }}</p>
                         <p>{{ __('Почта') }}:<br>{{ $country->translate('email') }}</p>

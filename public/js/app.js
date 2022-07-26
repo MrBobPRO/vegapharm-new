@@ -63,19 +63,21 @@ productsCarousel.owlCarousel({
 
 
 // Presence tabs
-document.querySelectorAll('[data-action="switch-presence-tab"]').forEach((item) => {
+document.querySelectorAll('.accordion-button').forEach((item) => {
     item.addEventListener('click', (evt) => {
         let targetButton = evt.target;
-        let activeButton = document.querySelector('.presence-globe__button--active');
+        let buttonsContainer = targetButton.closest('.accordion-buttons-container');
+        let activeButton = buttonsContainer.querySelector('.accordion-button--active');
 
         // escape multiple same button click
         if (targetButton !== activeButton) {
-            activeButton.classList.remove('presence-globe__button--active');
-            targetButton.classList.add('presence-globe__button--active');
+            activeButton.classList.remove('accordion-button--active');
+            targetButton.classList.add('accordion-button--active');
 
-            let tab = document.querySelector('.presence-globe__tabs');
-            tab.querySelector('.presence-globe__tabs-item--active').classList.remove('presence-globe__tabs-item--active');
-            tab.querySelector(`[data-id="${targetButton.dataset.targetId}"]`).classList.add('presence-globe__tabs-item--active');
+            let contentItem = document.querySelector(`[data-id="${targetButton.dataset.contentId}"]`);
+            let content = contentItem.closest('.accordion-content');
+            content.querySelector('.accordion-content__item--active').classList.remove('accordion-content__item--active');
+            contentItem.classList.add('accordion-content__item--active');
         }
     });
 });
