@@ -11,6 +11,11 @@ class Product extends Model
     use HasFactory;
     use Translateable;
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
     protected static function booted()
     {
         include(base_path() . '\App\Support\CreateTranslationsFunction.php');

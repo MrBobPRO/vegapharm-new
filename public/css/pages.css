@@ -171,6 +171,7 @@
     position: absolute;
     top: -190px;
     left: 45%;
+    pointer-events: none;
 }
 .presence-globe__tabs {
     margin-top: 32px;
@@ -249,7 +250,7 @@
 .products-list__title-container {
     margin-bottom: 32px;
 }
-.products-list-title {
+.products-list__title {
     margin: 0;
 }
 
@@ -270,3 +271,44 @@
     margin-bottom: 32px;
 }
 /* ------------ /end Products index page ------------ */
+
+
+/* ------------ Products show page ------------ */
+.products-show-filter-section__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.about-product {
+    background: var(--background-color);
+}
+.about-product__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+.about-product__title {
+    margin: 0;
+}
+.product-instruction-link {
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+/* Similar products */
+.similar-products__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+.similar-products__title {
+    margin-bottom: 32px;
+}
+
+/* Popular Products */
+.products-show-popular-products {
+    background-color: var(--background-color);
+}
+.products-show-popular-products .popular-products__inner {
+    padding-bottom: 80px;
+}
+/* ------------ /end Products show page ------------ */

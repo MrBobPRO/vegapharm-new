@@ -18,6 +18,7 @@ class ProductSeeder extends Seeder
     {
         $ruTitle = ['Линдавит', 'Белацеф', 'Новоинтофер', 'Монидерм', 'Аллерайз', 'Вегапенем', 'Церебрал КОГ', 'Эмерон таблетки'];
         $enTitle = ['Линдавит', 'Белацеф', 'Новоинтофер', 'Монидерм', 'Аллерайз', 'Вегапенем', 'Церебрал КОГ', 'Эмерон таблетки'];
+        $popular = [1,1,1,1,0,1,1,0];
         $description = 'Линдавит мультивитаминный сироп, представляет собой сочетание витаминов, которые необходимы детям в процессе взросления. Сироп содержит все витамины, необходимые организму, а также те, которые ему не хватает в процессе питания.';
         $composition = '<p><b>1 мл сиропа содержит</p></b>' . 
         '<ul>' .
@@ -41,7 +42,7 @@ class ProductSeeder extends Seeder
             $p = new Product();
             $p->slug = Helper::generateUniqueSlug($ruTitle[$i], Product::class);
             $p->prescription = rand(0,1);
-            $p->popular = rand(0,1);
+            $p->popular = $popular[$i];
             $p->save();
 
             $p->translations()->where('locale', 'ru')->first()->update([
@@ -63,6 +64,16 @@ class ProductSeeder extends Seeder
                 'indication' => $indication,
                 'use' => $use,
             ]);
+
+            $p->categories()->attach(rand(1, 6));
+
+            if($p->id == 6) {
+                $p->categories()->attach(7);
+            }
+
+            if($p->id == 8) {
+                $p->categories()->attach(8);
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ class MainController extends Controller
                 $join->on('categories.id', '=', 'category_translations.category_id');
                 $join->where('category_translations.locale', '=', app()->getLocale());
             })
+            ->select('categories.*', 'category_translations.title')
             ->orderBy('title')
             ->get();
 

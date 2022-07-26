@@ -31,7 +31,7 @@
 /* ------------ /end Corporate Culture ------------ */
 
 
-/* ------------ Products ------------ */
+/* ------------ Product ------------ */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -87,4 +87,52 @@
 .product-card--otc .product-card__icon {
     background-color: var(--secondary-color);
 }
-/* ------------ /end Products ------------ */
+/* ------------ /end Product ------------ */
+
+
+/* ------------ About product ------------ */
+.about-product-card {
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+    align-items: flex-start;
+}
+.about-product-card__image-container {
+    flex-basis: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 24px;
+    border: 1px solid;
+}
+.about-product-card--rx .about-product-card__image-container {
+    border-color: var(--main-color);
+}
+.about-product-card--otc .about-product-card__image-container {
+    border-color: var(--secondary-color);
+}
+.about-product-card__image {
+    width: 70%;
+}
+.about-product-card__text-conent {
+    flex-basis: 50%;
+}
+.about-product-card__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.about-product-card__prescription {
+    text-transform: uppercase;
+}
+.about-product-card--rx .product-card__prescription {
+    color: var(--main-color);
+}
+.about-product-card--otc .product-card__prescription {
+    color: var(--secondary-color);
+}
+.about-product-card__description {
+    margin: 12px 0;
+    font-weight: 300;
+}
+/* ------------ /end About product ------------ */

@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix(parseLocale())->group(function () {
     Route::get('/', [MainController::class, 'home'])->name('home');
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 });
+
+Route::post('/products/ajax-get', [ProductController::class, 'ajaxGet'])->name('products.ajax-get');
+
 
 function parseLocale()
 {

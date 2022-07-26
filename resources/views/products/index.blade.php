@@ -57,44 +57,14 @@
 <section class="products-section">
     <div class="products-section__inner main-container">
         <div class="filter">
-            {{-- Filter by Categories start --}}
-            <div class="filter__categories">
-                <label for="categories-select">Категории</label>
-                <div class="categories-select-container">
-                    <select class="selectize-singular categories-select" id="categories-select">
-                        <option>{{ __('Все препараты') }}</option>
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->title }}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="categories-select__icon">
-                        <svg>
-                            <use href="#filter"></use>
-                        </svg>
-                    </div>
-                </div>
-            </div>  {{-- Filter by Categories end --}}
-
-            {{-- Search start --}}
-            <div class="filter__search">
-                <div class="search-select-container">
-                    <select class="selectize-singular search-select" placeholder="Поиск по ключевой информации">
-                        <option></option>
-                        @foreach($searchProducts as $product)
-                            <option value="{{ $product->id }}">{{ $product->title }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <span class="material-icons-outlined search-select__icon">search</span>
-            </div>  {{-- Search end --}}
+            <x-categories-filter />
+            <x-search-filter />
         </div>  {{-- Filter end --}}
-        
+
         {{-- Products List start --}}
         <div class="products-list-container">
             <div class="products-list__title-container title-container">
-                <h1 class="main-title products-list-title">{{ __('Все препараты') }}</h1>
+                <h1 class="main-title products-list__title">{{ __('Все препараты') }}</h1>
                 
                 <ul class="breadcrumbs">
                     <li class="breadcrumbs__item">
