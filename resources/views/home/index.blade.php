@@ -169,7 +169,7 @@
             </ul>
 
             <div class="home-products__categories-more-container">
-                <a class="home-products__categories-more button button--main button_with_red_icon" href="#">
+                <a class="home-products__categories-more button button--main button_with_red_icon" href="{{ route('products.index') }}">
                     {{ __('Все препараты') }}
                     <span class="material-icons-outlined">arrow_forward</span>
                 </a>
@@ -215,17 +215,17 @@
             <div class="accordion-content presence-accordion-content">
                 @foreach ($cities as $city)
                     <div class="accordion-content__item presence-accordion-content__item @if($loop->first) accordion-content__item--active @endif" data-id="city{{ $city->id }}">
-                        <p>{{ __('Адрес регионального офиса') }}:<br>{{ $city->translate('address') }}</p>
-                        <p>{{ __('Телефон') }}:<br>{{ $city->translate('phone') }}</p>
-                        <p>{{ __('Почта') }}:<br>{{ $city->translate('email') }}</p>
+                        <p class="presence-accordion-content__address">{{ __('Адрес регионального офиса') }}:<br>{{ $city->translate('address') }}</p>
+                        <p class="presence-accordion-content__phone">{{ __('Телефон') }}:<br>{{ $city->translate('phone') }}</p>
+                        <p class="presence-accordion-content__email">{{ __('Почта') }}:<br>{{ $city->translate('email') }}</p>
                     </div>
                 @endforeach
 
                 @foreach ($countries as $country)
                     <div class="accordion-content__item presence-accordion-content__item" data-id="country{{ $country->id }}">
-                        <p>{{ __('Адрес регионального офиса') }}:<br>{{ $country->translate('address') }}</p>
-                        <p>{{ __('Телефон') }}:<br>{{ $country->translate('phone') }}</p>
-                        <p>{{ __('Почта') }}:<br>{{ $country->translate('email') }}</p>
+                        <p class="presence-accordion-content__address">{{ __('Адрес регионального офиса') }}:<br>{{ $country->translate('address') }}</p>
+                        <p class="presence-accordion-content__phone">{{ __('Телефон') }}:<br>{{ $country->translate('phone') }}</p>
+                        <p class="presence-accordion-content__email">{{ __('Почта') }}:<br>{{ $country->translate('email') }}</p>
                     </div>
                 @endforeach
             </div>
@@ -240,10 +240,13 @@
 
                 <div class="feedback-block">
                     <h1 class="feedback-block__title main-title">{{ __('Обратная связь') }}</h1> 
-                    <form class="feedback-form theme-styled-block" action="#" method="POST">
+
+                    <form class="feedback-form theme-styled-block" action="{{ route('feedback.store') }}" method="POST">
+                        @csrf
+                        
                         <div class="form-group">
                             <input class="feedback-input" type="text" name="name" placeholder="{{ __('Имя') }}*" required>
-                            <input class="feedback-input" type="text" name="email" placeholder="{{ __('Почта') }}*" required>
+                            <input class="feedback-input" type="email" name="email" placeholder="{{ __('Почта') }}*" required>
                         </div>
 
                         <div class="form-group">

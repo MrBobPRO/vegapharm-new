@@ -27,10 +27,8 @@
 <section class="our-products">
     <div class="our-products__inner main-container">
         <div class="our-products__text-container">
-            <h1 class="our-products__title main-title">Наша продукция</h1>
-            <div class="our-products__text">
-                <p>Мы производим качественные препараты для разной отрасли медицины</p>
-            </div>
+            <h1 class="our-products__title main-title">{{ __('Наша продукция') }}</h1>
+            <div class="our-products__text">{!! App\Models\Option::getByKey('our-products')->translate('value') !!}</div>
         </div>
 
         <div class="prescription-filter">

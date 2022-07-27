@@ -132,6 +132,9 @@
 
 
 /* ------------ Accordion ------------ */
+.accordion-button { 
+    transition: 0.3s;
+}
 .accordion-content__item {
     display: none;
     animation: fadeEffect 1s;
@@ -153,6 +156,7 @@
 }
 .presence-accordion-content {
     margin-top: 32px;
+    min-height: 50px;
 }
 .presence-accordion-content__item {
     gap: 20px;
@@ -161,6 +165,48 @@
 }
 .presence-accordion-content__item p {
     font-size: 13px;
+}
+.presence-accordion-content__address {
+    flex-basis: 48%;
+}
+.presence-accordion-content__phone, .presence-accordion-content__email {
+    flex-basis: 26%;
+}
+
+/* Product card accordion */
+.product-accordion-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+.product-accordion-button {
+    border-radius: 24px;
+    background-color: var(--main-color);
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 5px;
+    gap: 12px;
+    color: white;
+}
+.product-accordion-button.accordion-button--active {
+    background-color: var(--secondary-color);
+}
+.product-accordion-button span {
+    color: var(--text-color);
+    padding: 8px;
+    background: white;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.3s;
+}
+.product-accordion-button.accordion-button--active span {
+    transform: rotate(90deg);
+}
+.product-accordion-content__item {
+    flex-direction: column;
+    padding-top: 20px;
 }
 /* ------------ /end Accordion ------------ */
 
@@ -330,30 +376,3 @@
     transform: rotate(180deg);
 }
 /* ------------ /end Pagination  ------------ */
-
-
-/* ------------ Products card Collapse  ------------ */
-.product-card-collapse__button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 24px;
-}
-.product-card-collapse__button {
-    border-radius: 24px;
-    background: var(--main-color);
-    display: flex;
-    border: none;
-    align-items: center;
-    padding: 5px;
-    gap: 12px;
-    color: white;
-}
-.product-card-collapse__button span {
-    color: var(--text-color);
-    padding: 8px;
-    background: white;
-    border-radius: 50%;
-    font-size: 22px;
-}
-/* ------------ /end Products card Collapse  ------------ */

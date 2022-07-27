@@ -1,7 +1,7 @@
 @props(['categories'])
 
 <div class="filter__categories">
-    <label for="categories-select">Категории</label>
+    <label for="categories-select">{{ __('Категории') }}</label>
     <div class="categories-select-container">
         <select class="selectize-singular categories-select" id="categories-select">
             <option>{{ __('Все препараты') }}</option>

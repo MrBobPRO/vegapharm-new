@@ -232,6 +232,9 @@
 .popular-products {
     position: relative;
 }
+.popular-products--blue {
+    background-color: var(--background-color);
+}
 .popular-products__inner {
     padding-top: 60px;
     padding-bottom: 50px;
@@ -264,7 +267,7 @@
     margin: 0;
 }
 .product-instruction-link {
-    justify-content: flex-end;
+    margin-left: auto;
     margin-top: 32px;
 }
 
@@ -279,9 +282,6 @@
 }
 
 /* Popular Products */
-.products-show-popular-products {
-    background-color: var(--background-color);
-}
 .products-show-popular-products .popular-products__inner {
     padding-bottom: 80px;
 }

@@ -14,7 +14,7 @@
                 </li>
         
                 <li>
-                    <a class="header__contacts-link" href="#">
+                    <a class="header__contacts-link" href="mailto:{{ App\Models\Option::getByKey('email')->translate('value') }}">
                         {{ __('Почта') }}: <br>
                         {{ App\Models\Option::getByKey('email')->translate('value') }}
                     </a>
@@ -41,7 +41,7 @@
     
             <ul class="header__socials">
                 <li>
-                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('instagram-link')->translate('value') }}">
+                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('instagram-link')->translate('value') }}" target="_blank">
                         <svg>
                             <use href="#facebook-svg"></use>
                         </svg>
@@ -49,7 +49,7 @@
                 </li>
     
                 <li>
-                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('facebook-link')->translate('value') }}">
+                    <a class="header__socials-link" href="{{ App\Models\Option::getByKey('facebook-link')->translate('value') }}" target="_blank">
                         <svg>
                             <use href="#instagram-svg"></use>
                         </svg>

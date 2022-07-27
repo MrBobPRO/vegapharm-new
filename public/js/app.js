@@ -69,14 +69,24 @@ document.querySelectorAll('.accordion-button').forEach((item) => {
         let buttonsContainer = targetButton.closest('.accordion-buttons-container');
         let activeButton = buttonsContainer.querySelector('.accordion-button--active');
 
-        // escape multiple same button click
-        if (targetButton !== activeButton) {
+        let contentItem = document.querySelector(`[data-id="${targetButton.dataset.contentId}"]`);
+        let content = contentItem.closest('.accordion-content');
+        let activeContentItem = content.querySelector('.accordion-content__item--active');
+
+        // hide content if clicked already active button
+        if (targetButton === activeButton) {
             activeButton.classList.remove('accordion-button--active');
+            activeContentItem.classList.remove('accordion-content__item--active');
+        // else show clicked buttons content
+        } else {
+            if (activeButton) {
+                activeButton.classList.remove('accordion-button--active');
+            }
             targetButton.classList.add('accordion-button--active');
 
-            let contentItem = document.querySelector(`[data-id="${targetButton.dataset.contentId}"]`);
-            let content = contentItem.closest('.accordion-content');
-            content.querySelector('.accordion-content__item--active').classList.remove('accordion-content__item--active');
+            if (activeContentItem) {
+                activeContentItem.classList.remove('accordion-content__item--active');
+            }
             contentItem.classList.add('accordion-content__item--active');
         }
     });

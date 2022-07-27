@@ -72,44 +72,56 @@
                     <span class="product-card__prescription">{{ $product->prescription ? 'RX' : 'OTC' }}</span>
                     <p class="product-card__description">{{ $product->translate('description') }}</p>
 
-                    <div class="product-card-collapse__button-container">
-                        <button class="product-card-collapse__button">
+                    <div class="accordion-buttons-container product-accordion-buttons-container">
+                        <button class="accordion-button product-accordion-button" data-content-id="compositionContent">
                             <span class="material-icons-outlined">east</span> {{ __('Состав') }}
                         </button>
 
-                        <button class="product-card-collapse__button">
+                        <button class="accordion-button product-accordion-button" data-content-id="indicationContent">
                             <span class="material-icons-outlined">east</span> {{ __('Показания к применению') }}
                         </button>
 
-                        <button class="product-card-collapse__button">
+                        <button class="accordion-button product-accordion-button" data-content-id="useContent">
                             <span class="material-icons-outlined">east</span> {{ __('Способ применения') }}
                         </button>
                     </div>
 
-                    <a class="product-instruction-link button button--main button_with_red_icon" href="#">
-                        Скачать инструкцию
+                    <a class="product-instruction-link button button--main button_with_red_icon" href="/instructions/{{ $product->translate('instruction') }}" target="_blank">
+                        {{ __('Скачать инструкцию') }}
                         <span class="material-icons-outlined">arrow_forward</span>
                     </a>
                 </div>
             </div>
 
-            <div class="about-product-collapse-body">
+            <div class="accordion-content product-accordion-content">
+                <div class="accordion-content__item product-accordion-content__item" data-id="compositionContent">
+                    {!! $product->translate('composition') !!}
+                </div>
 
+                <div class="accordion-content__item product-accordion-content__item" data-id="indicationContent">
+                    {!! $product->translate('indication') !!}
+                </div>
+
+                <div class="accordion-content__item product-accordion-content__item" data-id="useContent">
+                    {!! $product->translate('use') !!}
+                </div>
             </div>
         </div>
     </div>
 </section>  {{-- About Product end --}}
 
 {{-- Similar Products start --}}
-<section class="similar-products">
-    <div class="similar-products__inner main-container">
-        <h1 class="similar-products__title main-title">{{ __('Похожие препараты') }}</h1>
-        <x-products-carousel :products="$similarProducts" />
-    </div>
-</section>  {{-- Similar Products end --}}
+@if(count($similarProducts))
+    <section class="similar-products">
+        <div class="similar-products__inner main-container">
+            <h1 class="similar-products__title main-title">{{ __('Похожие препараты') }}</h1>
+            <x-products-carousel :products="$similarProducts" />
+        </div>
+    </section>  
+@endif  {{-- Similar Products end --}}
 
 {{-- Popular products start --}}
-<section class="popular-products products-show-popular-products">
+<section class="popular-products products-show-popular-products @if(count($similarProducts)) popular-products--blue @endif">
     <div class="popular-products__inner main-container">
         <h1 class="popular-products__title main-title">{{ __('Популярные препараты') }}</h1>
         <x-products-carousel :products="$popularProducts" />

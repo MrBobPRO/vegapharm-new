@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Models\Locale;
@@ -23,6 +24,7 @@ Route::prefix(parseLocale())->group(function () {
 });
 
 Route::post('/products/ajax-get', [ProductController::class, 'ajaxGet'])->name('products.ajax-get');
+Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
 
 
 function parseLocale()

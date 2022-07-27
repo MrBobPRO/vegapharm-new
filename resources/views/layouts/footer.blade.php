@@ -23,7 +23,7 @@
                     {{ App\Models\Option::getByKey('phone')->translate('value') }}
                 </p>
 
-                <a class="footer__contacts-item" href="#">
+                <a class="footer__contacts-item" href="mailto:{{ App\Models\Option::getByKey('email')->translate('value') }}">
                     {{ __('Почта') }}:<br>
                     {{ App\Models\Option::getByKey('email')->translate('value') }}
                 </a>

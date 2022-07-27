@@ -117,6 +117,7 @@ button {
     font-weight: bold;
     background: transparent;
     border: none;
+    width: max-content;
 }
 .button_with_red_icon span {
     background: var(--secondary-color);
