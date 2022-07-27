@@ -213,11 +213,11 @@ button {
     background-color: var(--background-color);
 }
 .greeting__inner {
+    position: relative;
     background: url(/img/main/pill-1.png) 0 180px no-repeat, url(/img/main/pill-3.png) 660px 140px no-repeat, url(/img/main/pill-4.png) 1060px 390px no-repeat, url(/img/main/shape.png) 20px 150px no-repeat;
     align-items: center;
 }
 .greeting__image-container {
-    position: relative;
     display: flex;
     padding-left: 40px;
     width: 710px;
@@ -227,10 +227,17 @@ button {
 .greeting__image {
     width: 100%;
 }
+.greeting__image--changeable {
+    display: none;
+    cursor: pointer;
+}
+.greeting__image--changeable.visible {
+    display: block;
+}
 .greeting__absolute-pill {
     position: absolute;
     top: 58%;
-    right: -40px;
+    left: 600px;
 }
 .greeting__body {
     display: flex;

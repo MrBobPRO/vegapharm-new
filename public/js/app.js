@@ -94,12 +94,59 @@ document.querySelectorAll('.accordion-button').forEach((item) => {
 
 
 // smooth scroll on anchor click
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (evt) {
+        evt.preventDefault();
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
+
+
+// Greeting image switcher
+document.querySelector('.greeting__image-container').addEventListener('click', (evt) => {
+    if (evt.target.tagName === 'IMG') {
+        let nextEl = evt.target.nextElementSibling;
+        evt.target.classList.remove('visible');
+        nextEl ? nextEl.classList.add('visible') : evt.target.parentElement.firstElementChild.classList.add('visible');
+    }
+});
+
+
+// ---------------------Products Filtr start---------------------
+document.querySelectorAll('.prescription-filter__input').forEach((input) => {
+    input.addEventListener('change', (evt) => {
+        let oppositeCheckboxId = evt.target.id == 'prescription-otc' ? '#prescription-rx' : '#prescription-otc';
+        document.querySelector(oppositeCheckboxId).checked = false;
+
+        ajaxGetProducts();
+    });
+});
+
+$('#categories-select').selectize({
+    onChange(value) {
+        ajaxGetProducts();
+    }
+});
+
+function ajaxGetProducts() {
+    let prescriptionCheckbox = document.querySelector('input[name="prescription"]:checked');
+    let prescription = prescriptionCheckbox ? prescriptionCheckbox.checked : null;
+
+    let category_id = document.querySelector('#categories-select').value
+
+    $.ajax({
+        type: 'POST',
+        url: '/products/ajax-get',
+        data: { prescription: prescription, category_id: category_id },
+        success: function (result, status, xhr) {
+            console.log(result);
+        },
+        error: function (xhr) {
+            console.log("Ajax products get error: " + xhr.status + " " + xhr.statusText)
+        }
+    });
+}
+// ---------------------Products Filtr end---------------------

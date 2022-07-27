@@ -42,6 +42,7 @@ class ProductSeeder extends Seeder
             $p = new Product();
             $p->slug = Helper::generateUniqueSlug($ruTitle[$i], Product::class);
             $p->prescription = rand(0,1);
+            $p->displayOnGreeting = rand(0,1);
             $p->popular = $popular[$i];
             $p->save();
 

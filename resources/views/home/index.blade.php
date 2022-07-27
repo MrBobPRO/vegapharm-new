@@ -6,8 +6,9 @@
     <div class="greeting__inner main-container">
         <div class="greeting__image-container">
             <img class="greeting__image" src="{{ asset('img/main/greeting.png') }}" alt="greeting">
-            <img class="greeting__absolute-pill" src="{{ asset('img/main/pill-2.png') }}" alt="pill">
         </div>
+        
+        <img class="greeting__absolute-pill" src="{{ asset('img/main/pill-2.png') }}" alt="pill">
 
         <div class="greeting__body">
             <div class="greeting__text">

@@ -3,8 +3,8 @@
 <div class="filter__categories">
     <label for="categories-select">{{ __('Категории') }}</label>
     <div class="categories-select-container">
-        <select class="selectize-singular categories-select" id="categories-select">
-            <option>{{ __('Все препараты') }}</option>
+        <select class="categories-select" id="categories-select">
+            <option value="all">{{ __('Все препараты') }}</option>
             @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach

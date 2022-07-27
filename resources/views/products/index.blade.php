@@ -5,9 +5,12 @@
 <section class="greeting products-greeting">
     <div class="greeting__inner main-container">
         <div class="greeting__image-container">
-            <img class="greeting__image" src="{{ asset('img/products/lindavit.png') }}" alt="greeting">
-            <img class="greeting__absolute-pill" src="{{ asset('img/main/pill-2.png') }}" alt="pill">
+            @foreach ($greetingProducts as $product)
+                <img class="greeting__image greeting__image--changeable @if($loop->first)visible @endif" src="{{ asset('img/products/' . $product->translate('image')) }}" alt="{{ $product->translate('title') }}">
+            @endforeach
         </div>
+
+        <img class="greeting__absolute-pill" src="{{ asset('img/main/pill-2.png') }}" alt="pill">
 
         <div class="greeting__body">
             <div class="greeting__text">
@@ -33,7 +36,7 @@
 
         <div class="prescription-filter">
             <div class="prescription-filter__item">
-                <input class="prescription-filter__input" type="radio" name="prescription" value="0" id="prescription-otc">
+                <input class="prescription-filter__input" type="checkbox" name="prescription" value="0" id="prescription-otc">
                 <label class="prescription-filter__label prescription-filter__label--otc" for="prescription-otc">
                     <span class="prescription-filter__label-icon">{{ __('OTC') }}</span>
                     <span class="prescription-filter__label-text">{{ __('Лекарства отпускаемые без рецепта') }}</span>
@@ -41,7 +44,7 @@
             </div>
 
             <div class="prescription-filter__item">
-                <input class="prescription-filter__input" type="radio" name="prescription" value="1" id="prescription-rx">
+                <input class="prescription-filter__input" type="checkbox" name="prescription" value="1" id="prescription-rx">
                 <label class="prescription-filter__label prescription-filter__label--rx" for="prescription-rx">
                     <span class="prescription-filter__label-icon">{{ __('RX') }}</span>
                     <span class="prescription-filter__label-text">{{ __('Лекарства отпускаемые по рецепту') }}</span>

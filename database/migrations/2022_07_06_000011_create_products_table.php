@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('slug');
             $table->boolean('prescription');
             $table->boolean('popular');
+            $table->boolean('displayOnGreeting');
             $table->timestamps();
         });
     }

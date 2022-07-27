@@ -26,7 +26,9 @@ class ProductController extends Controller
             ->inRandomOrder()
             ->get();
 
-        return view('products.index', compact('products', 'popularProducts'));
+        $greetingProducts = Product::where('displayOnGreeting', true)->inRandomOrder()->take(6)->get();
+
+        return view('products.index', compact('products', 'popularProducts', 'greetingProducts'));
     }
 
     public function show($slug)
@@ -57,5 +59,10 @@ class ProductController extends Controller
             ->get();
 
         return view('products.show', compact('product', 'similarProducts', 'popularProducts'));
+    }
+
+    public function ajaxGet(Request $request)
+    {
+        return $request;
     }
 }
