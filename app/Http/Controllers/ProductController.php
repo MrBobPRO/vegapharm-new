@@ -129,8 +129,11 @@ class ProductController extends Controller
                     ->orWhere('product_translations.indication', 'LIKE', '%' . $keyword . '%')
                     ->orWhere('product_translations.use', 'LIKE', '%' . $keyword . '%');
             })
-            ->select('products.id*', 'product_translations.title');
+            ->select('products.*', 'product_translations.title')
+            ->orderBy('title')->get();
 
-        return $products;
+        return Blade::renderComponent(
+            new AnonymousComponent(view('components.filter-search-list'), ['products' => $products])
+        );
     }
 }

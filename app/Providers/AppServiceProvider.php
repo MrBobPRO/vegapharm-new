@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
             ->get());
         });
 
-        View::composer(['components.search-filter'], function ($view) {
+        View::composer(['components.filter-search'], function ($view) {
             $view->with('products', Product::join('product_translations', function($join) {
                 $join->on('products.id', '=', 'product_translations.product_id');
                 $join->where('product_translations.locale', '=', app()->getLocale());

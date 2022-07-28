@@ -27,7 +27,7 @@
 <section class="products-show-filter-section">
     <div class="products-show-filter-section__inner main-container">
         <div class="products-show-filter filter">
-            <x-search-filter />
+            <x-filter-search />
             <x-popular-products-list />
         </div>  
     </div>

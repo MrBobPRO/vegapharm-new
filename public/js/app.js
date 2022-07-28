@@ -20,6 +20,17 @@ $.ajaxSetup({
 });
 
 
+// debounce function
+function debounce (callback, timeoutDelay = 500) {
+    let timeoutId;
+
+    return (...rest) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+    };
+}
+
+
 // scroll top button
 document.querySelector('.scroll-top').addEventListener('click', () => {
     document.body.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -147,6 +158,32 @@ function ajaxGetProducts() {
         },
         error: function (xhr) {
             console.log("Ajax products get error: " + xhr.status + " " + xhr.statusText)
+        }
+    });
+}
+
+
+// Search start
+let searchInput = document.querySelector('#filter-search-input');
+if (searchInput) {
+    searchInput.addEventListener('input', debounce(function (evt) {
+        ajaxSearch();
+    }));
+}
+
+function ajaxSearch() {
+    let keyword = document.querySelector('#filter-search-input').value;
+
+    $.ajax({
+        type: 'POST',
+        url: '/products/search',
+        data: { keyword: keyword },
+        success: function (result) {
+            let dropdown = document.querySelector('#filter-search-dropdown');
+            dropdown.innerHTML = result;
+        },
+        error: function (xhr) {
+            console.log("Ajax products search error: " + xhr.status + " " + xhr.statusText)
         }
     });
 }

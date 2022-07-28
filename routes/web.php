@@ -25,6 +25,7 @@ Route::prefix(parseLocale())->group(function () {
 
 Route::post('/products/ajax-get', [ProductController::class, 'ajaxGet'])->name('products.ajax-get');
 Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::post('/products/search', [ProductController::class, 'search'])->name('products.search');
 
 
 function parseLocale()

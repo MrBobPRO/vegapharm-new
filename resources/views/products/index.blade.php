@@ -59,7 +59,7 @@
     <div class="products-section__inner main-container">
         <div class="filter">
             <x-categories-filter />
-            <x-search-filter />
+            <x-filter-search />
         </div>  {{-- Filter end --}}
 
         {{-- Products List start --}}
