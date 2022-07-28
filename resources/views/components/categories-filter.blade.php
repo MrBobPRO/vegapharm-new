@@ -6,7 +6,7 @@
         <select class="categories-select" id="categories-select">
             <option value="all">{{ __('Все препараты') }}</option>
             @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                <option value="{{ $category->id }}" @selected(request()->category_id == $category->id)>{{ $category->title }}</option>
             @endforeach
         </select>
 

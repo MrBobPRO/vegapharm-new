@@ -68,24 +68,24 @@
 
 /* RX card */
 .product-card--rx {
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--secondary-color);
 }
 .product-card--rx .product-card__prescription {
-    color: var(--main-color);
+    color: var(--secondary-color);
 }
 .product-card--rx .product-card__icon {
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
 }
 
 /* OTC card */
 .product-card--otc {
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--main-color);
 }
 .product-card--otc .product-card__prescription {
-    color: var(--secondary-color);
+    color: var(--main-color);
 }
 .product-card--otc .product-card__icon {
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
 }
 /* ------------ /end Product ------------ */
 
@@ -106,10 +106,10 @@
     border: 1px solid;
 }
 .about-product-card--rx .about-product-card__image-container {
-    border-color: var(--main-color);
+    border-color: var(--secondary-color);
 }
 .about-product-card--otc .about-product-card__image-container {
-    border-color: var(--secondary-color);
+    border-color: var(--main-color);
 }
 .about-product-card__image {
     width: 70%;
@@ -126,10 +126,10 @@
     text-transform: uppercase;
 }
 .about-product-card--rx .product-card__prescription {
-    color: var(--main-color);
+    color: var(--secondary-color);
 }
 .about-product-card--otc .product-card__prescription {
-    color: var(--secondary-color);
+    color: var(--main-color);
 }
 .about-product-card__description {
     margin: 12px 0;

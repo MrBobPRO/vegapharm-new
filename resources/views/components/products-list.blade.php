@@ -6,6 +6,10 @@
             <x-products-card :product="$product" />
         </li>
     @endforeach
+
+    @if(!count($products))
+        <p class="products-list__warning">{{ __('Продукты по вашему запросу не найдены!') }}</p>
+    @endif
 </ul>
 
 {{ $products->links('layouts.pagination') }}

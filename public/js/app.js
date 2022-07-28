@@ -133,7 +133,7 @@ $('#categories-select').selectize({
 
 function ajaxGetProducts() {
     let prescriptionCheckbox = document.querySelector('input[name="prescription"]:checked');
-    let prescription = prescriptionCheckbox ? prescriptionCheckbox.checked : null;
+    let prescription = prescriptionCheckbox ? prescriptionCheckbox.value : 'all';
 
     let category_id = document.querySelector('#categories-select').value
 
@@ -141,8 +141,9 @@ function ajaxGetProducts() {
         type: 'POST',
         url: '/products/ajax-get',
         data: { prescription: prescription, category_id: category_id },
-        success: function (result, status, xhr) {
-            console.log(result);
+        success: function (result) {
+            let listWrapper = document.querySelector('#products-list-wrapper');
+            listWrapper.innerHTML = result;
         },
         error: function (xhr) {
             console.log("Ajax products get error: " + xhr.status + " " + xhr.statusText)

@@ -36,7 +36,7 @@
 
         <div class="prescription-filter">
             <div class="prescription-filter__item">
-                <input class="prescription-filter__input" type="checkbox" name="prescription" value="0" id="prescription-otc">
+                <input class="prescription-filter__input" type="checkbox" name="prescription" value="0" id="prescription-otc" @checked($request->prescription != null && $request->prescription == '0')>
                 <label class="prescription-filter__label prescription-filter__label--otc" for="prescription-otc">
                     <span class="prescription-filter__label-icon">{{ __('OTC') }}</span>
                     <span class="prescription-filter__label-text">{{ __('Лекарства отпускаемые без рецепта') }}</span>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="prescription-filter__item">
-                <input class="prescription-filter__input" type="checkbox" name="prescription" value="1" id="prescription-rx">
+                <input class="prescription-filter__input" type="checkbox" name="prescription" value="1" id="prescription-rx" @checked($request->prescription != null && $request->prescription == '1')>
                 <label class="prescription-filter__label prescription-filter__label--rx" for="prescription-rx">
                     <span class="prescription-filter__label-icon">{{ __('RX') }}</span>
                     <span class="prescription-filter__label-text">{{ __('Лекарства отпускаемые по рецепту') }}</span>
@@ -55,7 +55,7 @@
 </section>  {{-- Our Products end --}}
 
 {{-- Products section start --}}
-<section class="products-section">
+<section class="products-section" id="products-section">
     <div class="products-section__inner main-container">
         <div class="filter">
             <x-categories-filter />
@@ -78,7 +78,9 @@
                 </ul>
             </div>
 
-            <x-products-list :products="$products" />
+            <div class="products-list-wrapper" id="products-list-wrapper">
+                <x-products-list :products="$products" />
+            </div>
         </div>  {{-- Products List end --}}
 
     </div>  {{-- Products section inner end --}}
