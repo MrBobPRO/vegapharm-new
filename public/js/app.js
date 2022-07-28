@@ -127,6 +127,8 @@ document.querySelector('.greeting__image-container').addEventListener('click', (
 
 
 // ---------------------Products Filtr start---------------------
+let filter = document.querySelector('#products-filter');
+
 document.querySelectorAll('.prescription-filter__input').forEach((input) => {
     input.addEventListener('change', (evt) => {
         let oppositeCheckboxId = evt.target.id == 'prescription-otc' ? '#prescription-rx' : '#prescription-otc';
@@ -146,11 +148,11 @@ function ajaxGetProducts() {
     let prescriptionCheckbox = document.querySelector('input[name="prescription"]:checked');
     let prescription = prescriptionCheckbox ? prescriptionCheckbox.value : 'all';
 
-    let category_id = document.querySelector('#categories-select').value
+    let category_id = document.querySelector('#categories-select').value;
 
     $.ajax({
         type: 'POST',
-        url: '/products/ajax-get',
+        url: filter.dataset.productsAjaxGetUrl,
         data: { prescription: prescription, category_id: category_id },
         success: function (result) {
             let listWrapper = document.querySelector('#products-list-wrapper');
@@ -176,7 +178,7 @@ function ajaxSearch() {
 
     $.ajax({
         type: 'POST',
-        url: '/products/search',
+        url: filter.dataset.productsSearchUrl,
         data: { keyword: keyword },
         success: function (result) {
             let dropdown = document.querySelector('#filter-search-dropdown');

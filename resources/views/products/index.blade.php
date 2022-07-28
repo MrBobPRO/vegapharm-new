@@ -57,7 +57,7 @@
 {{-- Products section start --}}
 <section class="products-section" id="products-section">
     <div class="products-section__inner main-container">
-        <div class="filter">
+        <div class="filter" id="products-filter" data-products-ajax-get-url="{{ route('products.ajax-get') }}" data-products-search-url="{{ route('products.search') }}">
             <x-categories-filter />
             <x-filter-search />
         </div>  {{-- Filter end --}}

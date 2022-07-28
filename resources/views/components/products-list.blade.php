@@ -8,7 +8,7 @@
     @endforeach
 
     @if(!count($products))
-        <p class="products-list__warning">{{ __('Продукты по вашему запросу не найдены!') }}</p>
+        <p class="products-list__warning">{{ __('Продукты по вашему запросу не найдены') }}!</p>
     @endif
 </ul>
 

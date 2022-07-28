@@ -26,7 +26,7 @@
 {{-- Products Filter start --}}
 <section class="products-show-filter-section">
     <div class="products-show-filter-section__inner main-container">
-        <div class="products-show-filter filter">
+        <div class="products-show-filter filter" id="products-filter" data-products-ajax-get-url="{{ route('products.ajax-get') }}" data-products-search-url="{{ route('products.search') }}">
             <x-filter-search />
             <x-popular-products-list />
         </div>  
