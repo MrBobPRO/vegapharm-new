@@ -1,0 +1,30 @@
+{
+    "short_name": "Vega",
+    "name": "Vegapharm",
+    "icons": [
+        {
+            "src": "/img/icons/favicon-192x192.ico",
+            "type": "image/ico",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/icons/favicon-180x180.ico",
+            "type": "image/ico",
+            "sizes": "180x180"
+        },
+        {
+            "src": "/img/icons/favicon-128x128.ico",
+            "type": "image/ico",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/img/icons/favicon-32x32.ico",
+            "type": "image/ico",
+            "sizes": "32x32"
+        }
+    ],
+    "background_color": "#E6F7FF",
+    "display": "standalone",
+    "theme_color": "#0190CC",
+    "description": "Vegapharm — Lodestar of the health"
+}

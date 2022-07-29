@@ -4,7 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
+        <meta name="msapplication-config" content="{{ asset('tiles.xml') }}" />
 
+        <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+
+        {{-- COnfig Safari browser --}}
+        <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="/img/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+
+        {{-- Hide Safari User Interface Components & Change status bar color --}}
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#0190CC">
+        
         <title>Vegapharm — {{ __('Путеводная звезда здоровья') }}</title>
 
         {{-- Google Open Sans Font --}}

@@ -2,10 +2,13 @@
 
 /**
  * Custom Helper class
+ * 
  * @author Bobur Nuridinov <bobnuridinov@gmail.com> 
  */
 
 namespace App\Support;
+
+use Image;
 
 class Helper {
     /**
@@ -44,5 +47,51 @@ class Helper {
         }
 
         return $slug;
+    }
+
+    /**
+     * remove tags, decode htmlspecialchars, trim and remove whitespaces
+     * cut string if length given
+     * and return clean text
+     * 
+     * used while sharing in socials/messangers
+     * 
+     * @param string $string
+     * @param integer $length
+     * @return string
+     */
+    public static function cleanText($string, $length = null)
+    {
+        $cleaned = preg_replace('#<[^>]+>#', ' ', $string); // remove tags
+        $cleaned = htmlspecialchars_decode($cleaned); // decode htmlspecialchars
+        $cleaned = preg_replace('!\s+!', ' ', $cleaned); // many spaces into one
+        $cleaned = trim($cleaned); // remove whitespaces
+
+        if ($length) {
+            $cleaned = mb_strlen($cleaned) < $length ? $cleaned : mb_substr($cleaned, 0, ($length - 4)) . '...'; //cut length
+        }
+
+        return $cleaned;
+    }
+
+    /**
+     * remove tags, decode htmlspecialchars, trim and remove whitespaces
+     * cut string if length given
+     * and return clean text
+     * 
+     * used while sharing in socials/messangers
+     * 
+     * @param string $string
+     * @return string
+     */
+    public static function generateShareText($string)
+    {
+        $cleaned = preg_replace('#<[^>]+>#', ' ', $string); //remove tags
+        $cleaned = htmlspecialchars_decode($cleaned); // decode htmlspecialchars
+        $cleaned = preg_replace('!\s+!', ' ', $cleaned); //many spaces into one
+        $cleaned = trim($cleaned); //remove whitespaces
+        $cleaned = mb_strlen($cleaned) < 170 ? $cleaned : mb_substr($cleaned, 0, 166) . '...'; //cut length
+        
+        return $cleaned;
     }
 }
