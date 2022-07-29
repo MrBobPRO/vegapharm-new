@@ -12,7 +12,7 @@
 
         <div class="categories-select__icon">
             <svg>
-                <use href="#filter"></use>
+                <use href="#filter-svg"></use>
             </svg>
         </div>
     </div>

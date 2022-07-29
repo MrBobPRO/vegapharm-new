@@ -127,7 +127,7 @@ document.querySelector('.greeting__image-container').addEventListener('click', (
 
 
 // ---------------------Products Filtr start---------------------
-let filter = document.querySelector('#products-filter');
+let filter = document.querySelector('#filter');
 
 document.querySelectorAll('.prescription-filter__input').forEach((input) => {
     input.addEventListener('change', (evt) => {

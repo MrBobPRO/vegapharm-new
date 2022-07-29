@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <link rel="manifest" href="{{ asset('manifest.json') }}">
-        <meta name="msapplication-config" content="{{ asset('tiles.xml') }}" />
+        <meta name="msapplication-config" content="{{ asset('msapplication-config.xml') }}" />
 
         <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
@@ -14,7 +14,7 @@
         {{-- COnfig Safari browser --}}
         <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
         <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="/img/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="/img/icons/apple-icon-167x167.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
 
         {{-- Hide Safari User Interface Components & Change status bar color --}}
@@ -50,14 +50,13 @@
     </head>
 
     <body>
-        {{-- SVG Sprite --}}
-        <x-svg-sprite />
-
         @include('layouts.header')
         <main class="main" role="main">
             @yield('main')
         </main>
         @include('layouts.footer')
+
+        <x-svg-sprite />
 
         {{-- JQuery --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
