@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('main')
 
+@section('title', __('Продукты'))
+
 {{-- Greeting start --}}
 <section class="greeting products-greeting">
     <div class="greeting__inner main-container">

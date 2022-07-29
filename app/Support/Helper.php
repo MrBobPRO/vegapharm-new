@@ -90,7 +90,7 @@ class Helper {
         $cleaned = htmlspecialchars_decode($cleaned); // decode htmlspecialchars
         $cleaned = preg_replace('!\s+!', ' ', $cleaned); //many spaces into one
         $cleaned = trim($cleaned); //remove whitespaces
-        $cleaned = mb_strlen($cleaned) < 170 ? $cleaned : mb_substr($cleaned, 0, 166) . '...'; //cut length
+        $cleaned = mb_strlen($cleaned) < 160 ? $cleaned : mb_substr($cleaned, 0, 156) . '...'; //cut length
         
         return $cleaned;
     }

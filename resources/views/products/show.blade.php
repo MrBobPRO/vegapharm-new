@@ -1,6 +1,18 @@
 @extends('layouts.app')
 @section('main')
 
+@section('title', $product->translate('title'))
+
+@section('meta-tags')
+    @php $shareText = App\Support\Helper::generateShareText($product->translate('description')); @endphp
+
+    <meta name="description" content="{{ $shareText }}">
+    <meta property="og:description" content="{{ $shareText }}">
+    <meta property="og:title" content="{{ $product->translate('title') }}" />
+    <meta property="og:image" content="{{ asset('img/products/' . $product->translate('image')) }}">
+    <meta property="og:image:alt" content="{{ $product->translate('title') }}">
+@endsection
+
 {{-- Greeting start --}}
 <section class="greeting products-greeting">
     <div class="greeting__inner main-container">

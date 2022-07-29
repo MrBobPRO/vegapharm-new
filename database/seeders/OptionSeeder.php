@@ -253,5 +253,20 @@ class OptionSeeder extends Seeder
         $opt->translations()->where('locale', 'en')->first()->update([
             'value' => '#'
         ]);
+
+
+        $opt = new Option();
+        $opt->title = 'Мета-тег описание сайта. Рекомендуемая длина 50 - 160 символа';
+        $opt->key = 'meta-tag-description';
+        $opt->wysiwyg = false;
+        $opt->save();
+
+        $opt->translations()->where('locale', 'ru')->first()->update([
+            'value' => 'Описание сайта для поисковиков'
+        ]);
+
+        $opt->translations()->where('locale', 'en')->first()->update([
+            'value' => 'Описание сайта для поисковиков'
+        ]);
     }
 }
